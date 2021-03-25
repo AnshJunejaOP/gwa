@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>SafeFrame Container</title>
+    <script>
+(function(){/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var m=this||self,w=function(a){return a};var x;var z=function(a,b,c){this.g=c===y?a:""};z.prototype.toString=function(){return this.g.toString()};var y={};var C=function(a,b){var c=void 0===c?{}:c;this.error=a;this.context=b.context;this.msg=b.message||"";this.id=b.id||"jserror";this.meta=c};var D=function(a){D[" "](a);return a};D[" "]=function(){};var E=/^(?:([^:/?#.]+):)?(?:\/\/(?:([^\\/?#]*)@)?([^\\/?#]*?)(?::([0-9]+))?(?=[\\/?#]|$))?([^?#]+)?(?:\?([^#]*))?(?:#([\s\S]*))?$/;var I=function(a,b){if(a)for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(void 0,a[c],c,a)};var J=/^https?:\/\/(\w|-)+\.cdn\.ampproject\.(net|org)(\?|\/|$)/,K=function(a,b){this.g=a;this.h=b},L=function(a,b){this.url=a;this.j=!!b;this.depth=null};var M=function(a){m.google_image_requests||(m.google_image_requests=[]);var b=m.document.createElement("img");b.src=a;m.google_image_requests.push(b)};var N=function(){this.i="&";this.h={};this.o=0;this.g=[]},O=function(a,b){var c={};c[a]=b;return[c]},U=function(a,b,c,d,g){var e=[];I(a,function(f,k){(f=T(f,b,c,d,g))&&e.push(k+"="+f)});return e.join(b)},T=function(a,b,c,d,g){if(null==a)return"";b=b||"&";c=c||",$";"string"==typeof c&&(c=c.split(""));if(a instanceof Array){if(d=d||0,d<c.length){for(var e=[],f=0;f<a.length;f++)e.push(T(a[f],b,c,d+1,g));return e.join(c[d])}}else if("object"==typeof a)return g=g||0,2>g?encodeURIComponent(U(a,b,c,d,g+1)):"...";return encodeURIComponent(String(a))},W=function(a){var b="https://pagead2.googlesyndication.com/pagead/gen_204?id=jserror&",c=V(a)-27;if(0>c)return"";a.g.sort(function(n,A){return n-A});for(var d=null,g="",e=0;e<a.g.length;e++)for(var f=a.g[e],k=a.h[f],l=0;l<k.length;l++){if(!c){d=null==d?f:d;break}var h=U(k[l],a.i,",$");if(h){h=g+h;if(c>=h.length){c-=h.length;b+=h;g=a.i;break}d=null==d?f:d}}a="";null!=d&&(a=g+"trn="+d);return b+a+""},V=function(a){var b=1,c;for(c in a.h)b=c.length>b?c.length:b;return 3997-b-a.i.length-1};var X=function(a){if(.01>Math.random())try{if(a instanceof N)var b=a;else b=new N,I(a,function(d,g){var e=b,f=e.o++;d=O(g,d);e.g.push(f);e.h[f]=d});var c=W(b);c&&M(c)}catch(d){}};var Y=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(g){b=c}}return b};var aa=/^([^;]+);(\d+);([\s\S]*)$/,ba=function(){var a=window.name,b=aa.exec(a);if(null===b)throw Error("Cannot parse serialized data. "+a.substring(0,50));a=+b[2];var c=b[3];if(a>c.length)throw Error("Parsed content size doesn't match. "+a+":"+c.length);return{m:b[1],content:c.substr(0,a),l:c.substr(a)}};var Z=null,da=function(a){var b=a.length,c=3*b/4;c%3?c=Math.floor(c):-1!="=.".indexOf(a[b-1])&&(c=-1!="=.".indexOf(a[b-2])?c-2:c-1);var d=new Uint8Array(c),g=0;ca(a,function(e){d[g++]=e});return d.subarray(0,g)},ca=function(a,b){function c(l){for(;d<a.length;){var h=a.charAt(d++),n=Z[h];if(null!=n)return n;if(!/^[\s\xa0]*$/.test(h))throw Error("Unknown base64 encoding at char: "+h);}return l}ea();for(var d=0;;){var g=c(-1),e=c(0),f=c(64),k=c(64);if(64===k&&-1===g)break;b(g<<2|e>>4);64!=f&&(b(e<<4&240|f>>2),64!=k&&b(f<<6&192|k))}},ea=function(){if(!Z){Z={};for(var a="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),b=["+/=","+/","-_=","-_.","-_"],c=0;5>c;c++)for(var d=a.concat(b[c].split("")),g=0;g<d.length;g++){var e=d[g];void 0===Z[e]&&(Z[e]=g)}}};(function(a){if(window.name){var b=function(e){try{var f=new N;f.g.push(1);f.h[1]=O("context",507);e.error&&e.meta&&e.id||(e=new C(e,{message:Y(e)}));if(e.msg){var k=e.msg.substring(0,512);f.g.push(2);f.h[2]=O("msg",k)}var l=[e.meta||{}];f.g.push(3);f.h[3]=l;l=m;k=[];e=null;do{var h=l;try{var n;if(n=!!h&&null!=h.location.href)b:{try{D(h.foo);n=!0;break b}catch(B){}n=!1}var A=n}catch(B){A=!1}if(A){var r=h.location.href;e=h.document&&h.document.referrer||null}else r=e,e=null;k.push(new L(r||""));try{l=h.parent}catch(B){l=null}}while(l&&h!=l);r=0;for(var t=k.length-1;r<=t;++r)k[r].depth=t-r;h=m;if(h.location&&h.location.ancestorOrigins&&h.location.ancestorOrigins.length==k.length-1)for(t=1;t<k.length;++t){var u=k[t];u.url||(u.url=h.location.ancestorOrigins[t-1]||"",u.j=!0)}var p=new L(m.location.href,!1);h=null;var F=k.length-1;for(u=F;0<=u;--u){var q=k[u];!h&&J.test(q.url)&&(h=q);if(q.url&&!q.j){p=q;break}}q=null;var fa=k.length&&k[F].url;0!=p.depth&&fa&&(q=k[F]);var v=new K(p,q);if(v.h){var ha=v.h.url||"";f.g.push(4);f.h[4]=O("top",ha)}var G={url:v.g.url||""};if(v.g.url){var H=v.g.url.match(E),P=H[1],Q=H[3],R=H[4];p="";P&&(p+=P+":");Q&&(p+="//",p+=Q,R&&(p+=":"+R));var S=p}else S="";G=[G,{url:S}];f.g.push(5);f.h[5]=G;X(f)}catch(B){try{X({context:"ecmserr",rctx:507,msg:Y(B),url:v&&v.g.url})}catch(ia){}}};try{var c=ba(),d=JSON.parse(c.l),g=void 0===d.encryptionMode?null:d.encryptionMode;window.name="";a(c.content,g,function(e){d.goog_safeframe_hlt&&(m.goog_safeframe_hlt=d.goog_safeframe_hlt);d._context&&(m.AMP_CONTEXT_DATA=d._context);m.sf_={v:c.m,cfg:d};document.open("text/html","replace");if(void 0===x){var f=null;var k=m.trustedTypes;if(k&&k.createPolicy){try{f=k.createPolicy("goog#html",{createHTML:w,createScript:w,createScriptURL:w})}catch(l){m.console&&m.console.error(l.message)}x=f}else x=f}e=(f=x)?f.createHTML(e):e;e=new z(e,null,y);document.write(e instanceof z&&e.constructor===z?e.g:"type_error:SafeHtml");document.close();m.sf_&&(window.name="")},b)}catch(e){b(e)}}})(function(a,b,c){if(2===b){b=new TextDecoder;var d=/<startguard>(.*)<endguard>/g.exec(a);if(a=b.decode.call(b,da(d&&d[1]?d[1]:a)))b=a.toLowerCase(),a=-1<b.indexOf("<!doctype")||-1<b.indexOf("<html")?a:"<!doctype html><html><head></head><body>"+a+"</body></html>"}c(a)});}).call(this);
+    </script><meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><script>var jscVersion = 'r20210322';</script><script>var google_casm=[];</script><script></script><style>		@keyframes slideInFromTop {
+			0% {
+				transform: translateY(-48px);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes rotate360 {
+			0% {
+				transform: rotate(0);
+				transform-origin: center 8px;
+			}
+
+			100% {
+				transform: rotate(720deg);
+				transform-origin: center 8px;
+			}
+		}
+
+		html,
+		p,
+		div,
+		a,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			font-size: 62.5%;
+			box-sizing: border-box;
+			min-height: 100%;
+		}
+
+		body {
+			line-height: 1.4;
+			font: normal 14px Arial, sans-serif;
+		}
+
+		.notification-bar {
+			position: relative;
+			padding: 8px 12px;
+			font-size: 14px;
+			color: #FFFFFF;
+			background-color: #4caf50;
+			animation: slideInFromTop .5s ease-in-out;
+		}
+
+		.notification-bar__link {
+			display: block;
+			color: #fff;
+			text-decoration: none;
+		}
+
+		.notification-bar__wrapper-text {
+			float: left;
+			margin: 0 8px 0 0;
+			width: 100%;
+			max-width: 60%;
+		}
+
+		.notification-bar__text {
+			display: block;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			position: relative;
+			line-height: 30px;
+			padding-left: 37px;
+		}
+
+		.notification-bar__text:before {
+			border-radius: 50%;
+			height: 30px;
+			width: 30px;
+			border: 2px solid;
+			transition: all .2s;
+			box-sizing: border-box;
+			display: block;
+			content: "";
+			position: absolute;
+			left: 0;
+		}
+
+		.notification-bar__text:after {
+			position: absolute;
+			content: "";
+			top: 7px;
+			left: 13px;
+			width: 4px;
+			height: 4px;
+			box-shadow: inset 0 0 0 32px, 0 4px, 0 11px;
+			animation: rotate360 .8s ease-in-out;
+			animation-delay: .5s;
+		}
+
+		.notification-bar__button {
+			display: inline-block;
+			min-width: auto;
+			padding: 8px 24px;
+			text-align: center;
+			background-color: #0288d1;
+			border-color: #0288d1;
+			font-weight: 600;
+			border-radius: 4px;
+			color: #fff;
+		}
+
+		.notification-bar__button:hover {
+			background-color: #0278b8;
+		}
+
+		.notification-bar__label {
+			float: none;
+			position: absolute;
+			top: 3px;
+			left: 50px;
+			font-size: 8px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		@media (min-width: 49em) {
+			.notification-bar {
+				padding: 8px 14px 8px 18px;
+			}
+
+			.notification-bar__label {
+				float: right;
+				position: relative;
+				left: auto;
+				top: auto;
+				font-size: 10px;
+			}
+
+			.notification-bar__wrapper-text {
+				max-width: 70%;
+			}
+
+			.notification-bar__button {
+				min-width: 120px;
+			}
+		}
+
+		@media (min-width: 64em) {
+			.notification-bar__wrapper-text {
+				max-width: 655px;
+				margin: 0 14px 0 0;
+			}
+		}</style></head><body topmargin="0" marginwidth="0" marginheight="0" leftmargin="0"><div class="GoogleActiveViewInnerContainer" style="left:0px;top:0px;width:100%;height:100%;position:fixed;pointer-events:none;z-index:-9999;"></div><script src="container_data/ext.js"></script><script>window.dicnf = {};</script><script data-jc="41" data-jc-version="r20210322" data-jc-flags="[&quot;x%278446'9efotmy&quot;]">(function(){/*  Copyright The Closure Library Authors. SPDX-License-Identifier: Apache-2.0 */ 'use strict';(class{constructor(b,a){this.g=a===c?b:""}}).prototype.toString=function(){return this.g.toString()};var c={};window.viewReq=[];window.vu=b=>{const a=new Image;a.src=b.replace("&amp;","&");window.viewReq.push(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjsvHcv1jOcEBBQGJGCUaDekxFTRtyRTztllff4LUkBmoYy7RTh_xiR0RxeyBpcJfdLGsoiOYUS0wyaOwd4i_xTYwOn_YDJWO2gDzN4kYTYsZ37TfOrmjS4GmY2fYgIjZAT1cNqmG6JBazU49nyfXVy_cjTC8CbVjMuxzedZ5h34iJMOGdJtp79n0gRoVRwpQS-vUqmzA97Ze8xMwb7K057FPxLnrnf6Vr3HBkiTJJkLPGna4t-zPJ2DJco2driUhNMc9_HZbsGkKEOTrRby-20w0_zOcvSoLBC9fzvZKAqz5-8pXl1lgJwa46xm5WGNdZh0He7CSJJcT5CXDcLTh35oXhlFIh-5SRAAbfeG0Fjn4mCEqrhExFsQqziboCdsnCUroLRrseijvUiQ6\x26sai\x3dAMfl-YRHTYv20I4jC0Cy4fF-yKUvRSsRtEJZ5x-y37ODH_rx2OqJ6XTALC362pxHK4-IjO7U9aPPRd732pl3EaYWGj4e1-R5Gq8tfNuGnJPChCbgYps33pGlWOC1SmacXuG3\x26sig\x3dCg0ArKJSzIPmKihpxvYLEAE\x26urlfix\x3d1\x26adurl\x3d")</script><div class="GoogleActiveViewElement" data-google-av-cxn="https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjsvACZY--NQBQ-fhGEGP7NpAS6dHF1PhbxVn1wawV3p57R5BcXbTZ17i5IDr0T7nHKVqrvg3I7G4wWvOZ_DBIjlAd1PapE90-pll8VdTszo&amp;sig=Cg0ArKJSzNdgKQ1kHjNAEAE" data-google-av-adk="114204824" data-google-av-metadata="la=0&amp;xdi=0&amp;" data-google-av-override="-1" data-google-av-dm="2" data-google-av-immediate="" data-google-av-aid="0" data-google-av-naid="1" data-google-av-slift="" data-google-av-cpmav="" data-google-av-btr="https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjst2wEiTMuProoPf8rtl6Dc9DL8cEK19-ZGPBxyRJplwtcmyGahvAWYtDeJKT5KNWKN3x4WhDAlOh6_voNGjaqQLISNkiYz_UbIBqvaas7CUi6jXtkLlAqaGxsvRbKiSrTMENCz82LRhRf3o48JD2gLnEi4i87oi9e0TDbi26G-RJnCm5xsj-kZxKq5dAWQn5Qjs-bGOftf4VFfzZG_mB0SgP96XD_bVA9WQK_N_6GbVURVsYEs2dGqriU_K7kTnCRQxs1tPOhGuQrz6DD8ghyQCyNRZYoDnubAqb7Kto0IzGQ1mzeVCV3ZrpXxXh8drHSfy_2mSlSbN2JMRbpUH3SnlXudHOwgMfNagVUv0Ra6ctmToOmrjdWsbtXADC-mN&amp;sai=AMfl-YSNmVRJkZSO90mjARuIgdD9PHFZBRBkl-f_Je1RGT-fFoE4_Bdqw3GFUDUH29_pwHo0yUyupFa01bXzyTiDIFqV3b326kZbGehPuYEqovZ69v9izOtls7HxOHY-d5Ks&amp;sig=Cg0ArKJSzMIHJgR5Ds5kEAE&amp;urlfix=1&amp;adurl=" data-google-av-itpl="7" data-google-av-rs="4" data-google-av-flags="[&quot;x%278440'9efotm(&amp;753374%2bejvf/%27844&gt;'9efotm(&amp;75337:%2bejvf/%278456'9efotm(&amp;2006706?&amp;&gt;`dopb~&quot;]" data-creative-load-listener="">	<div class="notification-bar">
+		<a class="notification-bar__link" title="" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjstgDKAcX-r-YzrmPLUJbwJ_9cEJ8eqCYcAD78vk-n0TaCUZ2IbzS2MSgxYjAa-Fg_fCX-kU9WZjrZJXcdSi7vy8feooaiyglt_AuqQAhDBQ0xJ2EUXa1SLlCozLShRf4yGBZiJzrErYiR0ZfJKa2rURPfGzzwomzEfDNJhq7gsZsujFGvWBCT1qt7DUv6HB6tYPJ6vB7eDHzgtfLotTKHRfbnxZSE39wRafZHICADiDIb_eCt3JfHHtBXBu5GH8eNLJR7jDQMO4XRqYfjbKZ-A2l6uI8_PV05jbKyp7-yIDbInrGdtwZB8qAkp7lv4yqfdH5KxcnB2maQ5fNWjynl8U7JvV7-OxqiJOrkWixeeIIXh1x7zl3Q&amp;sai=AMfl-YTtno6kgPjCmS2GFGxeKFUWbDZNptGQqARcMK6wL9teTJ3vB9CR-CozJTtGjxNVhFxTVYFhAp_AyolUpOTdy1Wjd4nph1UPEO8Z73eEKDbJpXpABdzihjDlaERBiZNV&amp;sig=Cg0ArKJSzF7ERQqMrBE4EAE&amp;urlfix=1&amp;adurl=https://opera-outdated.en.softonic.com/cpi-download" target="_blank">
+			<span class="notification-bar__wrapper-text">
+				<span class="notification-bar__text"> Opera Browser with integrated WhatsApp &amp; FB Messenger. Keep chatting while you browse.</span>
+			</span>
+			<span class="notification-bar__button">Download</span>
+			<span class="notification-bar__label">Ad</span>
+		</a>
+	</div>
+</div><script src="a_data_002/rx_lidar.js"></script><script type="text/javascript">osdlfm(-1,'','BmvpxALVcYPnhCJmRgAOXk67YDwAAAAAQATgByAEJwAIC4AIA4AQBoAYf0ggHCIDhgEAQAQ','',114204824,true,'la\x3d0\x26xdi\x3d0\x26',3,'CAASPeRorXPmfJnZvoWjgor2jgmuZarMGHxc1efDL8Y6YyFoOFnD7I2qrxwcFkugJqRA9kIzXAq_KehqwN6kt0w','https://pagead2.googlesyndication.com/pcs/activeview?xai\x3dAKAOjsvACZY--NQBQ-fhGEGP7NpAS6dHF1PhbxVn1wawV3p57R5BcXbTZ17i5IDr0T7nHKVqrvg3I7G4wWvOZ_DBIjlAd1PapE90-pll8VdTszo\x26sig\x3dCg0ArKJSzNdgKQ1kHjNAEAE','','[\x22x%278440\x279efotm(\x26753374%2bejvf/%27844\x3e\x279efotm(\x2675337:%2bejvf/%278456\x279efotm(\x262006706?\x26\x3e`dopb~\x22]');</script><div style="bottom:0;right:0;width:100px;height:100px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:-moz-crisp-edges !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB6SURBVBjTdVCBDcAwCKIf+P+1ywCpXVa3Rk3BIsB/LIWK3aF4W2+uSkcExseOOKFKaHVBry8ag5PZfjtYK+moMKUbFN1nQeDy0Pzk9H449HA1HRGVJpRcdlPJVTesHWNLVzZou9BD2+8tnOXht0a2N9NBPSB8lNg45QfE2QYkwrDX3gAAAABJRU5ErkJggg==') !important;"></div>
+  
+  
+  
+
+</body></html>

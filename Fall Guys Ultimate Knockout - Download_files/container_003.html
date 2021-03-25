@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>SafeFrame Container</title>
+    <script>
+(function(){/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var m=this||self,w=function(a){return a};var x;var z=function(a,b,c){this.g=c===y?a:""};z.prototype.toString=function(){return this.g.toString()};var y={};var C=function(a,b){var c=void 0===c?{}:c;this.error=a;this.context=b.context;this.msg=b.message||"";this.id=b.id||"jserror";this.meta=c};var D=function(a){D[" "](a);return a};D[" "]=function(){};var E=/^(?:([^:/?#.]+):)?(?:\/\/(?:([^\\/?#]*)@)?([^\\/?#]*?)(?::([0-9]+))?(?=[\\/?#]|$))?([^?#]+)?(?:\?([^#]*))?(?:#([\s\S]*))?$/;var I=function(a,b){if(a)for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(void 0,a[c],c,a)};var J=/^https?:\/\/(\w|-)+\.cdn\.ampproject\.(net|org)(\?|\/|$)/,K=function(a,b){this.g=a;this.h=b},L=function(a,b){this.url=a;this.j=!!b;this.depth=null};var M=function(a){m.google_image_requests||(m.google_image_requests=[]);var b=m.document.createElement("img");b.src=a;m.google_image_requests.push(b)};var N=function(){this.i="&";this.h={};this.o=0;this.g=[]},O=function(a,b){var c={};c[a]=b;return[c]},U=function(a,b,c,d,g){var e=[];I(a,function(f,k){(f=T(f,b,c,d,g))&&e.push(k+"="+f)});return e.join(b)},T=function(a,b,c,d,g){if(null==a)return"";b=b||"&";c=c||",$";"string"==typeof c&&(c=c.split(""));if(a instanceof Array){if(d=d||0,d<c.length){for(var e=[],f=0;f<a.length;f++)e.push(T(a[f],b,c,d+1,g));return e.join(c[d])}}else if("object"==typeof a)return g=g||0,2>g?encodeURIComponent(U(a,b,c,d,g+1)):"...";return encodeURIComponent(String(a))},W=function(a){var b="https://pagead2.googlesyndication.com/pagead/gen_204?id=jserror&",c=V(a)-27;if(0>c)return"";a.g.sort(function(n,A){return n-A});for(var d=null,g="",e=0;e<a.g.length;e++)for(var f=a.g[e],k=a.h[f],l=0;l<k.length;l++){if(!c){d=null==d?f:d;break}var h=U(k[l],a.i,",$");if(h){h=g+h;if(c>=h.length){c-=h.length;b+=h;g=a.i;break}d=null==d?f:d}}a="";null!=d&&(a=g+"trn="+d);return b+a+""},V=function(a){var b=1,c;for(c in a.h)b=c.length>b?c.length:b;return 3997-b-a.i.length-1};var X=function(a){if(.01>Math.random())try{if(a instanceof N)var b=a;else b=new N,I(a,function(d,g){var e=b,f=e.o++;d=O(g,d);e.g.push(f);e.h[f]=d});var c=W(b);c&&M(c)}catch(d){}};var Y=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(g){b=c}}return b};var aa=/^([^;]+);(\d+);([\s\S]*)$/,ba=function(){var a=window.name,b=aa.exec(a);if(null===b)throw Error("Cannot parse serialized data. "+a.substring(0,50));a=+b[2];var c=b[3];if(a>c.length)throw Error("Parsed content size doesn't match. "+a+":"+c.length);return{m:b[1],content:c.substr(0,a),l:c.substr(a)}};var Z=null,da=function(a){var b=a.length,c=3*b/4;c%3?c=Math.floor(c):-1!="=.".indexOf(a[b-1])&&(c=-1!="=.".indexOf(a[b-2])?c-2:c-1);var d=new Uint8Array(c),g=0;ca(a,function(e){d[g++]=e});return d.subarray(0,g)},ca=function(a,b){function c(l){for(;d<a.length;){var h=a.charAt(d++),n=Z[h];if(null!=n)return n;if(!/^[\s\xa0]*$/.test(h))throw Error("Unknown base64 encoding at char: "+h);}return l}ea();for(var d=0;;){var g=c(-1),e=c(0),f=c(64),k=c(64);if(64===k&&-1===g)break;b(g<<2|e>>4);64!=f&&(b(e<<4&240|f>>2),64!=k&&b(f<<6&192|k))}},ea=function(){if(!Z){Z={};for(var a="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),b=["+/=","+/","-_=","-_.","-_"],c=0;5>c;c++)for(var d=a.concat(b[c].split("")),g=0;g<d.length;g++){var e=d[g];void 0===Z[e]&&(Z[e]=g)}}};(function(a){if(window.name){var b=function(e){try{var f=new N;f.g.push(1);f.h[1]=O("context",507);e.error&&e.meta&&e.id||(e=new C(e,{message:Y(e)}));if(e.msg){var k=e.msg.substring(0,512);f.g.push(2);f.h[2]=O("msg",k)}var l=[e.meta||{}];f.g.push(3);f.h[3]=l;l=m;k=[];e=null;do{var h=l;try{var n;if(n=!!h&&null!=h.location.href)b:{try{D(h.foo);n=!0;break b}catch(B){}n=!1}var A=n}catch(B){A=!1}if(A){var r=h.location.href;e=h.document&&h.document.referrer||null}else r=e,e=null;k.push(new L(r||""));try{l=h.parent}catch(B){l=null}}while(l&&h!=l);r=0;for(var t=k.length-1;r<=t;++r)k[r].depth=t-r;h=m;if(h.location&&h.location.ancestorOrigins&&h.location.ancestorOrigins.length==k.length-1)for(t=1;t<k.length;++t){var u=k[t];u.url||(u.url=h.location.ancestorOrigins[t-1]||"",u.j=!0)}var p=new L(m.location.href,!1);h=null;var F=k.length-1;for(u=F;0<=u;--u){var q=k[u];!h&&J.test(q.url)&&(h=q);if(q.url&&!q.j){p=q;break}}q=null;var fa=k.length&&k[F].url;0!=p.depth&&fa&&(q=k[F]);var v=new K(p,q);if(v.h){var ha=v.h.url||"";f.g.push(4);f.h[4]=O("top",ha)}var G={url:v.g.url||""};if(v.g.url){var H=v.g.url.match(E),P=H[1],Q=H[3],R=H[4];p="";P&&(p+=P+":");Q&&(p+="//",p+=Q,R&&(p+=":"+R));var S=p}else S="";G=[G,{url:S}];f.g.push(5);f.h[5]=G;X(f)}catch(B){try{X({context:"ecmserr",rctx:507,msg:Y(B),url:v&&v.g.url})}catch(ia){}}};try{var c=ba(),d=JSON.parse(c.l),g=void 0===d.encryptionMode?null:d.encryptionMode;window.name="";a(c.content,g,function(e){d.goog_safeframe_hlt&&(m.goog_safeframe_hlt=d.goog_safeframe_hlt);d._context&&(m.AMP_CONTEXT_DATA=d._context);m.sf_={v:c.m,cfg:d};document.open("text/html","replace");if(void 0===x){var f=null;var k=m.trustedTypes;if(k&&k.createPolicy){try{f=k.createPolicy("goog#html",{createHTML:w,createScript:w,createScriptURL:w})}catch(l){m.console&&m.console.error(l.message)}x=f}else x=f}e=(f=x)?f.createHTML(e):e;e=new z(e,null,y);document.write(e instanceof z&&e.constructor===z?e.g:"type_error:SafeHtml");document.close();m.sf_&&(window.name="")},b)}catch(e){b(e)}}})(function(a,b,c){if(2===b){b=new TextDecoder;var d=/<startguard>(.*)<endguard>/g.exec(a);if(a=b.decode.call(b,da(d&&d[1]?d[1]:a)))b=a.toLowerCase(),a=-1<b.indexOf("<!doctype")||-1<b.indexOf("<html")?a:"<!doctype html><html><head></head><body>"+a+"</body></html>"}c(a)});}).call(this);
+    </script><meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><script>var jscVersion = 'r20210322';</script><script>var google_casm=[];</script><script></script><style>body {
+  font-family: 'Roboto',sans-serif;
+  font-size: 12px;
+  color: #e1e1e1;
+  background-color: rgb(77, 77, 77);
+}
+
+body a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.attribution {
+  font-size: 10px;  
+  padding: 0;
+}
+
+.title a {
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.advertiser a {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.image {
+  height: 64px;
+  width: 64px;
+  float: left;
+  margin: 6px 12px 6px 12px;
+  border: 2px solid #FFF;
+  border-radius: 3px;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+}
+
+.image .image-link {
+  height: 100%;
+  width: 100%;
+}
+
+.call-to-action a {
+  float: right;
+  margin: 18px 12px;
+  padding: 6px 12px;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+  background-color: #3abf72;
+  box-shadow: 0 3px 0 0 #288a51;
+  font-size: 18px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+</style></head><body topmargin="0" marginwidth="0" marginheight="0" leftmargin="0"><div class="GoogleActiveViewInnerContainer" style="left:0px;top:0px;width:100%;height:100%;position:fixed;pointer-events:none;z-index:-9999;"></div><script src="container_data_003/ext.js"></script><script>window.dicnf = {};</script><script data-jc="41" data-jc-version="r20210322" data-jc-flags="[&quot;x%278446'9efotmy&quot;]">(function(){/*  Copyright The Closure Library Authors. SPDX-License-Identifier: Apache-2.0 */ 'use strict';(class{constructor(b,a){this.g=a===c?b:""}}).prototype.toString=function(){return this.g.toString()};var c={};window.viewReq=[];window.vu=b=>{const a=new Image;a.src=b.replace("&amp;","&");window.viewReq.push(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjsvaQi8g1eTKuOFRP-HreCXY0G8Y-RyfkUOtZDfTxgLV6GOjrT8WdEyOBYFnxBmYr14XhJ2jkJXFnithbHEOiwejH8MAleEZ1zAEVvhMBXHV91IwkF40VyqN3ortUChOpJoAD8GEq-4k46gvj4UJG8HQlhkMc6B0PGYXiEOKacBQIk9xRst8U8R3XoRJ2z7ooyQ6f59pAHXOZgtgdoM5vc7Xe4OLfUxyMBnTIoPbwhaijCw9qOCOD8rCKDexK0sWQTUyGgx7Rk9atC4CKsgCQQSth_hHiMqAJPpNzCGW37EEQgHc2Uvi5PSiLo-xpWR2wTkBJ2zrVw-nPA56Jkd9CWNlxdpwWUU01iS_tqqxvz-rNRXZjyUEj8YoJXs5S6t4JsEe5u5b-JXG9SsFrQPyBEIs8hDG9vN7Gy8\x26sai\x3dAMfl-YQq6Nge0sPlt0OyIoWOZIB4rAgex-EOoz25JFFsfz0q63bRW8zfCrxq4uPWGG7yft0bvrGy1FXWkPR4rHst6PlskIoikIjeVpvbFgIoGn-BnQQCygy6s4k6J2LVt9I\x26sig\x3dCg0ArKJSzDJut1WNv0h5EAE\x26urlfix\x3d1\x26adurl\x3d")</script><link href="container_data_003/css.css" rel="stylesheet" type="text/css"><div class="GoogleActiveViewElement" data-google-av-cxn="https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjsvxKwMmO0vIncjPaDsAr8_-WiUO_XcvdnmRCDC4NA2m6RPK6O3DI8_AzD5g_m5xLUG_1uo6BWUUal2G6q0hDFvSidEcvGfEWdZ0ho57yv0&amp;sig=Cg0ArKJSzO4NVbMKwqg7EAE" data-google-av-adk="1640600045" data-google-av-metadata="la=0&amp;xdi=0&amp;" data-google-av-override="-1" data-google-av-dm="2" data-google-av-immediate="" data-google-av-aid="0" data-google-av-naid="1" data-google-av-slift="" data-google-av-cpmav="" data-google-av-btr="https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsuZn_hTFyAjLOaFibHrkPJinH13zHG1y4balyZU8BNFHWWFnwgF1lCDLs6wiBDyHaTxqM4fHTgmnG22GsdfwdET5D7_96M5smYLcEaMt60mYNNqHYmz4UxG-T6CQf_X0D49BW3YmwHcRxUWsJtdtCFsINqr-H-dMT_yf0aVLmhwDXFZ4nAsB4IF3NrNSPF-J1PDKaIEqyy8d857DFJ6HkY-WIe4kosulEQihGEP1o28KWS-2uwzteT1M0Lp8GwSNso7ODLsJG68haz8ai7H_BcepXR3ScX2Z1pIvc6Y-YYcFiXrl-pOfyVYlE52L4isH-2iTagRY31CI83JeFXrjWVBjePFgHmEFl7L2NOemA1P_J5PXAWowEhsavxPx12KLWRrQ1Bk1hGB1N2O2lk&amp;sai=AMfl-YS-zHAN2UHeX-xV7LhrSC2EQa1v0nauWbAMT1U-Sd9vrV1wecs65FuYe9OnubNVHQGMTzg92toDES1M9_5DC3-xXpPybdCTqZrePON7HWpyOZrnNnFOW1QKoq9RcVg&amp;sig=Cg0ArKJSzNu2xJFh2s5fEAE&amp;urlfix=1&amp;adurl=" data-google-av-itpl="7" data-google-av-rs="4" data-google-av-flags="[&quot;x%278440'9efotm(&amp;753374%2bejvf/%27844&gt;'9efotm(&amp;75337:%2bejvf/%278456'9efotm(&amp;2006706?&amp;&gt;`dopb~&quot;]" data-creative-load-listener=""><div id="adunit" style="overflow: hidden;">
+  <img src="container_003.html" style="display:none">
+  <div class="attribution">Ad</div>
+  <div class="image">
+    <a class="image-link" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjstPCojc1p4j2Nr3SLkz3ywYcqycSZCJ0QPrCs9617isI4Zmc86OAqjfL1GVLKl_HImHVDFkuwIjb_URN8_qZO1yPGGTTpMwSXevjr57OvD_s-O4UPHHStwyp7RKwwaO6jJdsXc785ARjWL3hrngTuKjtVclyaOVtUNjeGrxPwVdAKzSp1fOc9qwkJNqHdVD0VgtQXM-HmyuqO1eL-h7RTHPXiuhgcyJZuYPRtj0B67634sJ_T80semg6H7dEqNYDLwcuUTinqN1QS5YsqlvKmEBfsa1_YO1HAC3dxwuHG5IiD-OMCWO0axg_0idsAOEwP8_edmCKFDoAW05iy-ApGtiFLJRp4gTAOZg35gLennlL0JgbJpOVaM-UQfvP8vXO132iLDt&amp;sai=AMfl-YSKfrio48ZVl0aRY6uCk0mSxtJYEzPJV8Q2Prq4GOnLhsFcr1cLSiH8u9V_GSdd9BxRjfdCO9eszGuC8GK_KKDLsuBqL8wDVi1zNIN6Y0Fif35-bzZ8GuSyIZ6h1VU&amp;sig=Cg0ArKJSzJ5dW40hsLWIEAE&amp;urlfix=1&amp;adurl=https://opera-search.en.softonic.com/cpi-download" target="_top"><img src="container_data_003/11654146421016027524.png"></a>
+  </div>
+  <div class="title">
+    <a class="title-link" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjstPCojc1p4j2Nr3SLkz3ywYcqycSZCJ0QPrCs9617isI4Zmc86OAqjfL1GVLKl_HImHVDFkuwIjb_URN8_qZO1yPGGTTpMwSXevjr57OvD_s-O4UPHHStwyp7RKwwaO6jJdsXc785ARjWL3hrngTuKjtVclyaOVtUNjeGrxPwVdAKzSp1fOc9qwkJNqHdVD0VgtQXM-HmyuqO1eL-h7RTHPXiuhgcyJZuYPRtj0B67634sJ_T80semg6H7dEqNYDLwcuUTinqN1QS5YsqlvKmEBfsa1_YO1HAC3dxwuHG5IiD-OMCWO0axg_0idsAOEwP8_edmCKFDoAW05iy-ApGtiFLJRp4gTAOZg35gLennlL0JgbJpOVaM-UQfvP8vXO132iLDt&amp;sai=AMfl-YSKfrio48ZVl0aRY6uCk0mSxtJYEzPJV8Q2Prq4GOnLhsFcr1cLSiH8u9V_GSdd9BxRjfdCO9eszGuC8GK_KKDLsuBqL8wDVi1zNIN6Y0Fif35-bzZ8GuSyIZ6h1VU&amp;sig=Cg0ArKJSzJ5dW40hsLWIEAE&amp;urlfix=1&amp;adurl=https://opera-search.en.softonic.com/cpi-download" target="_top">Opera</a>
+  </div>
+  <div class="body">
+    <a class="body-link" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjstPCojc1p4j2Nr3SLkz3ywYcqycSZCJ0QPrCs9617isI4Zmc86OAqjfL1GVLKl_HImHVDFkuwIjb_URN8_qZO1yPGGTTpMwSXevjr57OvD_s-O4UPHHStwyp7RKwwaO6jJdsXc785ARjWL3hrngTuKjtVclyaOVtUNjeGrxPwVdAKzSp1fOc9qwkJNqHdVD0VgtQXM-HmyuqO1eL-h7RTHPXiuhgcyJZuYPRtj0B67634sJ_T80semg6H7dEqNYDLwcuUTinqN1QS5YsqlvKmEBfsa1_YO1HAC3dxwuHG5IiD-OMCWO0axg_0idsAOEwP8_edmCKFDoAW05iy-ApGtiFLJRp4gTAOZg35gLennlL0JgbJpOVaM-UQfvP8vXO132iLDt&amp;sai=AMfl-YSKfrio48ZVl0aRY6uCk0mSxtJYEzPJV8Q2Prq4GOnLhsFcr1cLSiH8u9V_GSdd9BxRjfdCO9eszGuC8GK_KKDLsuBqL8wDVi1zNIN6Y0Fif35-bzZ8GuSyIZ6h1VU&amp;sig=Cg0ArKJSzJ5dW40hsLWIEAE&amp;urlfix=1&amp;adurl=https://opera-search.en.softonic.com/cpi-download" target="_top">Opera Browser - Fast and secure browser.</a>
+  </div>
+  <div class="call-to-action">
+    <a class="call-to-action-link" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjstPCojc1p4j2Nr3SLkz3ywYcqycSZCJ0QPrCs9617isI4Zmc86OAqjfL1GVLKl_HImHVDFkuwIjb_URN8_qZO1yPGGTTpMwSXevjr57OvD_s-O4UPHHStwyp7RKwwaO6jJdsXc785ARjWL3hrngTuKjtVclyaOVtUNjeGrxPwVdAKzSp1fOc9qwkJNqHdVD0VgtQXM-HmyuqO1eL-h7RTHPXiuhgcyJZuYPRtj0B67634sJ_T80semg6H7dEqNYDLwcuUTinqN1QS5YsqlvKmEBfsa1_YO1HAC3dxwuHG5IiD-OMCWO0axg_0idsAOEwP8_edmCKFDoAW05iy-ApGtiFLJRp4gTAOZg35gLennlL0JgbJpOVaM-UQfvP8vXO132iLDt&amp;sai=AMfl-YSKfrio48ZVl0aRY6uCk0mSxtJYEzPJV8Q2Prq4GOnLhsFcr1cLSiH8u9V_GSdd9BxRjfdCO9eszGuC8GK_KKDLsuBqL8wDVi1zNIN6Y0Fif35-bzZ8GuSyIZ6h1VU&amp;sig=Cg0ArKJSzJ5dW40hsLWIEAE&amp;urlfix=1&amp;adurl=https://opera-search.en.softonic.com/cpi-download" target="_top">Download now!</a>
+  </div>
+</div>
+
+<script>
+  var locale = '' || 'en-US';
+  var sitesConfig = {
+    'ar-SA': { hostname: 'ar.softonic.com' },
+    'de-DE': { hostname: 'de.softonic.com' },
+    'en-US': { hostname: 'en.softonic.com' },
+    'es-ES': { hostname: 'www.softonic.com' },
+    'fr-FR': { hostname: 'fr.softonic.com' },
+    'id-ID': { hostname: 'id.softonic.com' },
+    'it-IT': { hostname: 'it.softonic.com' },
+    'ja-JP': { hostname: 'www.softonic.jp' },
+    'ko-KR': { hostname: 'ko.softonic.com' },
+    'nl-NL': { hostname: 'nl.softonic.com' },
+    'pl-PL': { hostname: 'www.softonic.pl' },
+    'pt-BR': { hostname: 'www.softonic.com.br' },
+    'ru-RU': { hostname: 'ru.softonic.com' },
+    'th-TH': { hostname: 'th.softonic.com' },
+    'tr-TR': { hostname: 'tr.softonic.com' },
+    'vi-VN': { hostname: 'vi.softonic.com' },
+    'zh-CN': { hostname: 'www.softonic.cn' },
+    'fa-IR': { hostname: 'fa.softonic.com' },
+    'sw-KE': { hostname: 'sw.softonic.com' },
+    'hi-IN': { hostname: 'hi.softonic.com' },
+  };
+
+  // Replace download url if appId is provided
+  if ('e9b8b260-96d0-11e6-98d4-00163ec9f5fa') {
+    var develSuffix = 0 === 1 ? '.dev' : '';
+    var endpointUrl = 'https://' + sitesConfig[locale].hostname + develSuffix + '/ads-download-url'
+      + '?appId=e9b8b260-96d0-11e6-98d4-00163ec9f5fa'
+      + '&appUrl=https://opera-search.en.softonic.com/cpi-download';
+    
+    var xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+      document.querySelector('.call-to-action-link').href = 'https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjstPCojc1p4j2Nr3SLkz3ywYcqycSZCJ0QPrCs9617isI4Zmc86OAqjfL1GVLKl_HImHVDFkuwIjb_URN8_qZO1yPGGTTpMwSXevjr57OvD_s-O4UPHHStwyp7RKwwaO6jJdsXc785ARjWL3hrngTuKjtVclyaOVtUNjeGrxPwVdAKzSp1fOc9qwkJNqHdVD0VgtQXM-HmyuqO1eL-h7RTHPXiuhgcyJZuYPRtj0B67634sJ_T80semg6H7dEqNYDLwcuUTinqN1QS5YsqlvKmEBfsa1_YO1HAC3dxwuHG5IiD-OMCWO0axg_0idsAOEwP8_edmCKFDoAW05iy-ApGtiFLJRp4gTAOZg35gLennlL0JgbJpOVaM-UQfvP8vXO132iLDt&sai=AMfl-YSKfrio48ZVl0aRY6uCk0mSxtJYEzPJV8Q2Prq4GOnLhsFcr1cLSiH8u9V_GSdd9BxRjfdCO9eszGuC8GK_KKDLsuBqL8wDVi1zNIN6Y0Fif35-bzZ8GuSyIZ6h1VU&sig=Cg0ArKJSzJ5dW40hsLWIEAE&urlfix=1&adurl=' + xhttp.response;
+    };
+    xhttp.open('GET', endpointUrl);
+    xhttp.send();
+  }
+</script></div><script src="container_data_003/rx_lidar.js"></script><script type="text/javascript">osdlfm(-1,'','Bc34nkrNcYN_RJIm69QX5uZTYBQAAAAAQATgByAEJwAIC4AIA4AQBoAYf0ggHCIDhgEAQAQ','',1640600045,true,'la\x3d0\x26xdi\x3d0\x26',3,'CAASPeRoUCp_uKDK3ThgVHn9WtHK6UYMu_DhociNK7qo7zwZQVGObrB9KzifqQZvYNzO861anXPQ501epyFvf4Q','https://pagead2.googlesyndication.com/pcs/activeview?xai\x3dAKAOjsvxKwMmO0vIncjPaDsAr8_-WiUO_XcvdnmRCDC4NA2m6RPK6O3DI8_AzD5g_m5xLUG_1uo6BWUUal2G6q0hDFvSidEcvGfEWdZ0ho57yv0\x26sig\x3dCg0ArKJSzO4NVbMKwqg7EAE','','[\x22x%278440\x279efotm(\x26753374%2bejvf/%27844\x3e\x279efotm(\x2675337:%2bejvf/%278456\x279efotm(\x262006706?\x26\x3e`dopb~\x22]');</script><div style="bottom:0;right:0;width:100px;height:100px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:-moz-crisp-edges !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB8SURBVBjTbZEBDsAgCAPrD/r/1y6DtsIyXBTi2VUE/uN01HorgLVLfa6KQw+kKoKsWXwloc+XRuZbxQl0Rk4S5Mc3RKKdDydNVybz1nSC1tbuywmm4BbVr3bPbKTXOJWq8dFBMrdNF3wI2B3EsLX6rQsu7TbtV5pvaV3gAcezBRHVyidYAAAAAElFTkSuQmCC') !important;"></div>
+  
+  
+  
+
+</body></html>
