@@ -7,7 +7,9 @@
 
     <title>Gaming With Ansh</title>
 </head>
-<body style="background-color: lightyellow;"></body>
+<body style="background-color: lightyellow;">
+    <?php include('register.php') ?>
+</body>
 
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
